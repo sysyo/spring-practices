@@ -13,7 +13,7 @@ import com.douzone.emaillist.vo.EmaillistVo;
 
 @Controller
 public class EmaillistController {
-	@Autowired
+	@Autowired // 어디에도 new를 하지 않음
 	private EmaillistRepository emaillistRepository;
 	
 	@RequestMapping("")

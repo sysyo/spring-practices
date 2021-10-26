@@ -20,12 +20,6 @@ public class BoardController {
 		return "BoardController.write()";
 	}
 	
-//	@ResponseBody
-//	@RequestMapping("/board/view")
-//	public String view() {
-//		return "BoardController.view()";
-//	}	
-	
 	@ResponseBody
 	@RequestMapping("/board/view/{no}")
 	public String view(@PathVariable("no") Long boardNo) {

@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.douzone.container.videosystem.Avengers;
+import com.douzone.container.videosystem.BlankDisc;
 import com.douzone.container.videosystem.DVDPlayer;
 import com.douzone.container.videosystem.DigitalVideoDisc;
 
@@ -14,6 +15,7 @@ public class DVDPlayerConfig {
 	public Avengers avegers() {
 		return new Avengers();
 	}
+	
 	
 	// 주입(Injection) 하기1
 	// Bean 생성 메소드를 직접 호출하는 방법
@@ -36,6 +38,14 @@ public class DVDPlayerConfig {
 	// setter 주입
 	@Bean
 	public DVDPlayer dvdPlayer03(DigitalVideoDisc dvd) {
+		DVDPlayer dvdPlayer = new DVDPlayer();
+		dvdPlayer.setDvd(dvd);		
+		return dvdPlayer;
+	}
+	
+	// 같은 타입의 빈을 생성할 경우
+	@Bean(name="dvdPlayer04")
+	public DVDPlayer dvdPlayer04(DigitalVideoDisc dvd) {
 		DVDPlayer dvdPlayer = new DVDPlayer();
 		dvdPlayer.setDvd(dvd);		
 		return dvdPlayer;
